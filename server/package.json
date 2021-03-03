@@ -1,0 +1,30 @@
+{
+  "name": "netui-server",
+  "version": "1.0.0",
+  "description": "Server side of netUI app, scans the network and feeds info to the front-end",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc; nodemon",
+    "dev": "nodemon ./src/index.ts",
+    "commit": "cz"
+  },
+  "author": "Hussein Abdeljabbar Ismail Martinez",
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "koa": "^2.13.1",
+    "koa-morgan": "^1.0.1",
+    "koa-router": "^10.0.0",
+    "ts-node": "^9.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.31",
+    "commitizen": "^4.2.3",
+    "nodemon": "^2.0.7"
+  }
+}
