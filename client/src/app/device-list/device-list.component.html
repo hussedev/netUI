@@ -1,1 +1,5 @@
-<p>device-list works!</p>
+<div class="device-list">
+  <div *ngFor="let device of devices">
+    <p>{{device.ip4}}@{{device.hostname}}:{{device.latency/1000}}s</p>
+  </div>
+</div>

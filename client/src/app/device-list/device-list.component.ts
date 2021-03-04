@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Input } from '@angular/core';
+import { Device } from '../types/device';
 @Component({
   selector: 'app-device-list',
   templateUrl: './device-list.component.html',
   styleUrls: ['./device-list.component.css']
 })
-export class DeviceListComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class DeviceListComponent {
+  @Input()
+  devices: Device[];
 }

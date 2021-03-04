@@ -9,6 +9,6 @@ router.get('/', async (ctx, next) => {
   await next();
 });
 
-router.get('/nmap', nmap.scan);
+router.get('/getAll', nmap.scan);
 
 export default router;
