@@ -1,0 +1,10 @@
+<div class="container">
+  <div *ngIf="devices">
+    <h1>{{devices.name}}</h1>
+    <div class="device-list-container">
+      <div *ngFor="let device of devices.target">
+        <app-device-single [device]="device"></app-device-single>
+      </div>
+    </div>
+  </div>
+</div>

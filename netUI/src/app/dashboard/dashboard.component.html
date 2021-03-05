@@ -1,0 +1,7 @@
+<div class="dashboard-container">
+  <div class="target-list">
+    <div *ngFor="let target of targets">
+      <app-device-list [devices]="target"></app-device-list>
+    </div>
+  </div>
+</div>

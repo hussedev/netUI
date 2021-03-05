@@ -1,0 +1,11 @@
+.device-container {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-device {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
