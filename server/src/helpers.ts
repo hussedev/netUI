@@ -16,7 +16,9 @@ function parseSimpleScan(data: string[]): Device[] {
   const regex = {
     ip4: /((25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])\.){3}(25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])/g,
     hostname: /for\s(([\w]|[\w][\w\-]*[\w])\.)*([\w]|[\w][\w\-]*[\w])\s\(/g,
-    latency: /[0-9]+\.[0-9]+s\slatency/g
+    latency: /[0-9]+\.[0-9]+s\slatency/g,
+    mac: /([^\W_]{2}\:){5}[^\W_]{2}/g,
+    macBrand: /([^\W_]{2}\:){5}[^\W_]{2}\s\(.*\)$/g
   }
 
   if (data) {
@@ -26,10 +28,24 @@ function parseSimpleScan(data: string[]): Device[] {
           if (ip4) {
             const device: Device = { ip4: ip4[ip4.length - 1] }
             const hostname = el.match(regex.hostname);
-            if (hostname) device.hostname = hostname[hostname.length - 1].slice(4, -2);
+            if (hostname) {
+              hostname[hostname.length - 1].slice(-4) === '.lan'
+                ? device.hostname = hostname[hostname.length - 1].slice(4, -6)
+                : device.hostname = hostname[hostname.length - 1].slice(4, -2);
+            }
             if (str.length - idx > 1) {
               const latency = str[idx+1].match(regex.latency);
               if (latency) device.latency = Math.round(+latency[0].slice(0,-9)*1000);
+              if (str.length - idx > 2) {
+                const macBrand = str[idx+2].match(regex.macBrand);
+                if (macBrand) {
+                  device.mac = macBrand[0].slice(0,17);
+                  device.brand = macBrand[0].slice(19,-1)
+                } else {
+                  const mac = str[idx+2].match(regex.mac);
+                  if (mac) device.mac = mac[0];
+                }
+              }
             }
             acc.push(device);
           }
@@ -42,9 +58,27 @@ function nmap (args: NmapArgs): Promise<Device[]> {
   return new Promise(
     (resolve, reject) => {
 
+
       try {
         //execP('sudo',['nmap', opts.args, opts.range])
         execP('nmap', [args.opts, args.range])
+          .then((data) => {
+            console.log(data.stdout);
+            if(data && data.stdout) resolve(parseSimpleScan(data.stdout.split('\n')));
+            resolve([]);
+        });
+      } catch(err) {
+        reject(err);
+      }
+    });
+}
+
+function nmapSudo (args: NmapArgs): Promise<Device[]> {
+  return new Promise(
+    (resolve, reject) => {
+      try {
+        //execP('sudo',['nmap', opts.args, opts.range])
+        execP('sudo', ['nmap',args.opts, args.range])
           .then((data) => {
             if(data && data.stdout) resolve(parseSimpleScan(data.stdout.split('\n')));
             resolve([]);
@@ -56,6 +90,6 @@ function nmap (args: NmapArgs): Promise<Device[]> {
 }
 
 export async function scanAll (): Promise<Device[]> {
-  return await nmap({opts: '-sn', range: '192.168.1.0/24'});
+  return await nmapSudo({opts: '-sn', range: '192.168.1.0/24'});
 }
 

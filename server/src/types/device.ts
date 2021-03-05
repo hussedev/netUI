@@ -6,6 +6,7 @@ export interface Device {
   latency?: number,
   status?: string,
   type?: string,
+  brand?: string
 }
 
 export interface NmapArgs {

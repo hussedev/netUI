@@ -1,10 +1,11 @@
-<div class="container">
-  <div *ngIf="devices">
-    <h1>{{devices.name}}</h1>
-    <div class="device-list-container">
-      <div *ngFor="let device of devices.target">
-        <app-device-single [device]="device"></app-device-single>
-      </div>
+<div fxLayout="column" fxLayoutAlign="center center" class="container" *ngIf="devices">
+  <h1>{{devices.name}}</h1>
+  <div
+  fxLayout="row wrap"
+  fxLayoutAlign="space-between"
+  class="device-list-container">
+    <div *ngFor="let device of devices.target">
+      <app-device-single [device]="device"></app-device-single>
     </div>
   </div>
 </div>

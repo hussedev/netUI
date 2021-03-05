@@ -1,15 +1,13 @@
-import * as Koa from 'koa';
-import * as morgan from 'koa-morgan';
-import * as cors from '@koa/cors';
-import router from './router';
-
-import { server as serverConf } from '../config.js';
-
-const server: any = new Koa();
-
-const port: number = serverConf.port;
-const host: string = serverConf.host;
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Koa = require("koa");
+const morgan = require("koa-morgan");
+const cors = require("@koa/cors");
+const router_1 = require("./router");
+const config_js_1 = require("../config.js");
+const server = new Koa();
+const port = config_js_1.server.port;
+const host = config_js_1.server.host;
 /**
  * CORS middleware
  *
@@ -25,15 +23,8 @@ const host: string = serverConf.host;
  * @api public
  */
 server.use(cors());
-server.use(morgan('dev'))
-server.use(router.routes()).use(router.allowedMethods());
-
+server.use(morgan('dev'));
+server.use(router_1.default.routes()).use(router_1.default.allowedMethods());
 server.listen(port, () => {
-  console.log(`Server is listening on http://${host}:${port} 🌒🌕🌘`);
+    console.log(`Server is listening on http://${host}:${port} 🌒🌕🌘`);
 });
-/*
-export netScannet = () => {}//setInterval ponerla en el helper
-
-require(adfadf)()
-*/
-

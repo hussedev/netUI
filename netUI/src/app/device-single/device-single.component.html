@@ -5,15 +5,15 @@
   <div *ngIf="device && device.status && device.status === 'unknown'; then unknownBlock"></div>
   <div *ngIf="device">
     <div class="info-device">
-      <div class="ip4">{{device.ip4}}</div>
-      <div *ngIf="device.mac">
-        <div class="mac">{{device.mac}}</div>
-      </div>
       <div *ngIf="device.hostname">
         <div class="hostname">{{device.hostname}}</div>
       </div>
-      <div *ngIf="device.brand">
-        <div class="brand">{{device.brand}}</div>
+      <div *ngIf="!device.hostname">
+        <div class="hostname">Unknown</div>
+      </div>
+      <div class="ip4">{{device.ip4}}</div>
+      <div *ngIf="device.mac">
+        <div class="mac">{{device.mac}}</div>
       </div>
     </div>
   </div>
