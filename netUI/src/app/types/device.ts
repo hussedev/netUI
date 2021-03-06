@@ -10,12 +10,25 @@ export interface Device {
   brand?: string
   // isOn: () => boolean;
 }
-
 // function isOn (device: Device): boolean {
 //   return status === 'up';
 // }
 
-export interface Target {
-  name?: string,
-  target: Device[]
+
+// dynamic object definition
+export interface DeviceGroup {
+  [name: string]: Device[];
+}
+
+/**
+ * mode: local/openvpn/ssh
+ */
+export interface Watched {
+  [name: string]: {
+    gateway?: {
+      ip: string,
+      mode: string
+    },
+    targets: string[]
+  }
 }

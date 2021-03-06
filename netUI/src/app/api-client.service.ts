@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Device, Target } from './types/device';
+import { Device } from './types/device';
 import { apiConf } from './config';
 
 import mockedData from './mocks/mocks';

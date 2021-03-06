@@ -17,10 +17,10 @@
       <div><!-- fxHide.gt-xs> -->
           <img class="icon" src="assets/svg/chevron_right.svg" (click)="sidenav.toggle()"/>
       </div>
-      <div class="target-list">
-        <div *ngFor="let target of targets">
-          <mat-divider *ngIf="target !== targets[0]"></mat-divider>
-          <app-device-list [devices]="target"></app-device-list>
+      <div class="group-list">
+        <div *ngFor="let group of devices | keyvalue">
+          <mat-divider></mat-divider>
+          <app-device-list [name] ="group.key" [devices]="group.value"></app-device-list>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiClientService } from '../api-client.service';
-import { Device, Target} from '../types/device';
+import { Device, DeviceGroup, Watched} from '../types/device';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -8,28 +8,19 @@ import { Device, Target} from '../types/device';
 })
 export class DashboardComponent implements OnInit {
 
-  targets: Target[] = [];
+  watched: Watched = {};
+  devices: DeviceGroup = {};
 
   constructor(private client: ApiClientService) { }
 
   ngOnInit() {
+    this.devices["default"] = [];
+    this.devices["group1"] = [];
     this.client.getAll()
-      .subscribe(devices => {
-        this.targets.push(
-        {
-          name: 'default',
-          target: devices
-        });
-      });
-
+      .subscribe(devices =>
+        this.devices["default"] = devices);
     this.client.getWatched('group1')
-    .subscribe(devices => {
-      this.targets.push(
-      {
-        name: 'group1',
-        target: devices
-      });
-    });
-
+    .subscribe(devices =>
+      this.devices["group1"] = devices);
   }
 }

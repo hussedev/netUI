@@ -12,6 +12,7 @@ import { DeviceListComponent } from './device-list/device-list.component';
 import { DeviceSingleComponent } from './device-single/device-single.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './views/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     DeviceListComponent,
     DeviceSingleComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
