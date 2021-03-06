@@ -13,6 +13,7 @@ import { DeviceSingleComponent } from './device-single/device-single.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './views/navbar/navbar.component';
+import { ScanComponent } from './scan/scan.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NavbarComponent } from './views/navbar/navbar.component';
     DeviceListComponent,
     DeviceSingleComponent,
     WelcomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    ScanComponent
   ],
   imports: [
     BrowserModule,

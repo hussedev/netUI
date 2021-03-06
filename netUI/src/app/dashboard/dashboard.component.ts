@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiClientService } from '../api-client.service';
 import { Device, DeviceGroup, Watched} from '../types/device';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
