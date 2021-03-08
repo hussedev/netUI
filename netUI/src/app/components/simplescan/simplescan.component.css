@@ -1,38 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
-/* Angular Material */
-/* @import "~@angular/material/prebuilt-themes/deeppurple-amber.css"; */
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  min-height: 100vh;
-  background: #e2e2e2;
-}
-
-/* Angular Material */
-
-.app-header {
-  justify-content: space-between;
-  position: fixed;
+.example-container {
+  position: absolute;
   top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  z-index: 2;
-  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
-    0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
 }
 
-.netUI {
-  text-decoration: none;
-  color: #ffffff;
+.example-radio-group {
+  display: block;
+  border: 1px solid #555;
+  margin: 20px;
+  padding: 10px;
 }
 
 .box {
@@ -75,52 +53,52 @@ body {
   z-index: -1;
 }
 
-/* LOGIN */
-.login-wrapper {
+/* scan */
+.scan-wrapper {
   height: 100%;
 }
 
-.login-wrapper .example-form {
+.scan-wrapper .example-form {
   min-width: 100%;
   max-width: 300px;
   width: 100%;
 }
 
-.login-wrapper .example-full-width,
-.login-wrapper .btn-block {
+.scan-wrapper .example-full-width,
+.scan-wrapper .btn-block {
   width: 100%;
 }
 
-.login-wrapper mat-card-header {
+.scan-wrapper mat-card-header {
   text-align: center;
   width: 100%;
   display: block;
   font-weight: 700;
 }
 
-.login-wrapper mat-card-header mat-card-title {
+.scan-wrapper mat-card-header mat-card-title {
   font-size: 30px;
   margin: 0;
 }
 
-.login-wrapper .mat-card {
+.scan-wrapper .mat-card {
   padding: 40px 70px 50px;
 }
 
-.login-wrapper .mat-stroked-button {
+.scan-wrapper .mat-stroked-button {
   border: 1px solid currentColor;
   line-height: 54px;
   background: #fff7fa;
 }
 
-.login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
+.scan-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
   padding: 0.8375em 0;
 }
 
 /* form validator */
 
 form {
-  width: 420px;
+  width: 720px;
   margin: 35px auto 100px;
   display: block;
   float: none;

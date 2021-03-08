@@ -1,46 +1,167 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="93.169px" height="93.169px" viewBox="0 0 93.169 93.169" style="enable-background:new 0 0 93.169 93.169;"
-	 xml:space="preserve">
-<g>
-	<path d="M64.902,0H28.265c-3.711,0-6.72,3.009-6.72,6.72v79.729c0,3.712,3.008,6.72,6.72,6.72h36.637
-		c3.713,0,6.722-3.008,6.722-6.72V6.72C71.623,3.009,68.615,0,64.902,0z M42.088,3.973h8.991c0.323,0,0.586,0.263,0.586,0.587
-		c0,0.323-0.263,0.586-0.586,0.586h-8.991c-0.324,0-0.586-0.263-0.586-0.586C41.502,4.236,41.765,3.973,42.088,3.973z M33.126,2.563
-		c0.518,0,0.938,0.42,0.938,0.938c0,0.518-0.419,0.938-0.938,0.938s-0.938-0.42-0.938-0.938C32.188,2.983,32.608,2.563,33.126,2.563
-		z M28.876,2.001c0.829,0,1.5,0.672,1.5,1.5c0,0.828-0.671,1.5-1.5,1.5s-1.5-0.672-1.5-1.5C27.376,2.673,28.047,2.001,28.876,2.001z
-		 M48.93,89.758h-4.691c-1.488,0-2.693-1.205-2.693-2.691c0-1.487,1.205-2.692,2.693-2.692h4.691c1.488,0,2.693,1.205,2.693,2.692
-		C51.623,88.553,50.418,89.758,48.93,89.758z M68.777,82.248H24.391V10.92h44.386V82.248z"/>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="151.71255pt"
+   height="142.19022pt"
+   viewBox="0 0 151.71255 142.19022"
+   preserveAspectRatio="xMidYMid meet"
+   id="svg8"
+   sodipodi:docname="smartphone.svg"
+   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)">
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1280"
+     inkscape:window-height="1343"
+     id="namedview10"
+     showgrid="false"
+     inkscape:zoom="8"
+     inkscape:cx="109.40681"
+     inkscape:cy="89.89079"
+     inkscape:window-x="3840"
+     inkscape:window-y="27"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg8"
+     inkscape:document-rotation="0"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:lockguides="false">
+    <sodipodi:guide
+       position="75.856993,117.74158"
+       orientation="1,0"
+       id="guide1169"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="125.62039,117.74158"
+       orientation="0,-1"
+       id="guide853"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="26.087951,24.444534"
+       orientation="0,-1"
+       id="guide855"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="26.087951,24.444534"
+       orientation="1,0"
+       id="guide857"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="125.62039,117.74158"
+       orientation="1,0"
+       id="guide859"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="7.2142888,71.101214"
+       orientation="0,-1"
+       id="guide861"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="10.673346,2.5981548"
+       orientation="0.70710678,-0.70710678"
+       id="guide863"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="29.922444,28.312156"
+       orientation="0.70710678,-0.70710678"
+       id="guide867" />
+    <sodipodi:guide
+       position="138.29839,5.5229816"
+       orientation="-0.70710678,-0.70710678"
+       id="guide869" />
+    <sodipodi:guide
+       position="75.856993,74.246705"
+       orientation="-0.70710678,-0.70710678"
+       id="guide871" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata2">
+Created by potrace 1.15, written by Peter Selinger 2001-2017
+<rdf:RDF>
+  <cc:Work
+     rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type
+       rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    <dc:title></dc:title>
+  </cc:Work>
+</rdf:RDF>
+</metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Layer 2"
+     transform="translate(-1127.7874,-1056.8098)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Layer 1"
+     transform="translate(-1127.7874,-1056.8098)" />
+  <g
+     id="g1892"
+     transform="matrix(0.74405399,0,0,0.74405399,19.532071,18.186898)">
+    <g
+       id="layer3-3"
+       inkscape:label="Layer 2"
+       transform="translate(-1127.7874,-1056.8098)" />
+    <g
+       id="layer1-6"
+       inkscape:label="Layer 1"
+       transform="translate(-1127.7874,-1056.8098)" />
+    <g
+       id="g1342"
+       transform="matrix(1.0005242,0,0,1.0005242,29.010206,24.448636)">
+      <g
+         id="g1286">
+        <path
+           d="M 64.902,0 H 28.265 c -3.711,0 -6.72,3.009 -6.72,6.72 v 79.729 c 0,3.712 3.008,6.72 6.72,6.72 h 36.637 c 3.713,0 6.722,-3.008 6.722,-6.72 V 6.72 C 71.623,3.009 68.615,0 64.902,0 Z M 42.088,3.973 h 8.991 c 0.323,0 0.586,0.263 0.586,0.587 0,0.323 -0.263,0.586 -0.586,0.586 h -8.991 c -0.324,0 -0.586,-0.263 -0.586,-0.586 0,-0.324 0.263,-0.587 0.586,-0.587 z m -8.962,-1.41 c 0.518,0 0.938,0.42 0.938,0.938 0,0.518 -0.419,0.938 -0.938,0.938 -0.519,0 -0.938,-0.42 -0.938,-0.938 0,-0.518 0.42,-0.938 0.938,-0.938 z m -4.25,-0.562 c 0.829,0 1.5,0.672 1.5,1.5 0,0.828 -0.671,1.5 -1.5,1.5 -0.829,0 -1.5,-0.672 -1.5,-1.5 0,-0.828 0.671,-1.5 1.5,-1.5 z M 48.93,89.758 h -4.691 c -1.488,0 -2.693,-1.205 -2.693,-2.691 0,-1.487 1.205,-2.692 2.693,-2.692 h 4.691 c 1.488,0 2.693,1.205 2.693,2.692 0,1.486 -1.205,2.691 -2.693,2.691 z m 19.847,-7.51 H 24.391 V 10.92 h 44.386 z"
+           id="path1284" />
+      </g>
+      <g
+         id="g1288" />
+      <g
+         id="g1290" />
+      <g
+         id="g1292" />
+      <g
+         id="g1294" />
+      <g
+         id="g1296" />
+      <g
+         id="g1298" />
+      <g
+         id="g1300" />
+      <g
+         id="g1302" />
+      <g
+         id="g1304" />
+      <g
+         id="g1306" />
+      <g
+         id="g1308" />
+      <g
+         id="g1310" />
+      <g
+         id="g1312" />
+      <g
+         id="g1314" />
+      <g
+         id="g1316" />
+    </g>
+  </g>
 </svg>

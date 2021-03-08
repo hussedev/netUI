@@ -7,7 +7,8 @@ export interface Device {
   status?: string,
   type?: string,
   img?: string,
-  brand?: string
+  brand?: string,
+  watched?: boolean
   // isOn: () => boolean;
 }
 // function isOn (device: Device): boolean {

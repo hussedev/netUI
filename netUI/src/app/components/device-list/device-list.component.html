@@ -1,0 +1,33 @@
+<!-- Toolbar -->
+<!-- <mat-toolbar color="primary" class="app-header">
+  <button mat-button (click)="toggleGridColumns()">
+    <span *ngIf="gridColumns === 5">Three Columns</span>
+    <span *ngIf="gridColumns === 4">Four Columns</span>
+  </button>
+</mat-toolbar> -->
+<div
+  fxLayout="column"
+  fxLayoutAlign="center center"
+  class="container"
+  *ngIf="devices"
+>
+  <div class="device-list-container">
+    <h1>{{ name }}</h1>
+
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+      <div [fxFlex]="100 / gridColumns + '%'" *ngFor="let device of devices">
+        <app-device-single
+          [gridColumns]="gridColumns"
+          [device]="device"
+        ></app-device-single>
+      </div>
+    </div>
+    <!-- <mat-grid-list
+      cols="5" rowHeight="1:1">
+        <mat-grid-tile
+    *ngFor="let device of devices">
+    <app-device-single [device]="device"></app-device-single> -->
+    <!-- </mat-grid-tile>
+    </mat-grid-list> -->
+  </div>
+</div>

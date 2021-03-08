@@ -1,0 +1,26 @@
+.device-container {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* text-overflow: clip;
+  text-overflow: ellipsis;
+  text-overflow: unset;
+  text-overflow: initial; */
+}
+
+.info-device {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  /* ?: How to link a variable to it */
+  background-image: src("assets/svg/pc-on-unknown.svg");
+  background-size: cover;
+}
