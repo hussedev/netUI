@@ -11,8 +11,6 @@ import { NgTerminalModule } from 'ng-terminal';
 
 import { AngularMaterialModule } from './angular-material.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { LogInComponent } from './components/log-in/log-in.component';
-import { RegisterComponent } from './components/register/register.component';
 import { SimplescanComponent } from './components/simplescan/simplescan.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DeviceListComponent } from './components/device-list/device-list.component';
@@ -25,8 +23,6 @@ import { DeviceSingleComponent } from './components/device-single/device-single.
     DashboardComponent,
     DeviceListComponent,
     DeviceSingleComponent,
-    LogInComponent,
-    RegisterComponent,
     SimplescanComponent,
     NavbarComponent,
   ],

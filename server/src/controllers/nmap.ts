@@ -1,21 +1,24 @@
-import { scanAll } from '../helpers';
+import { scanAll } from '../helpers/shell/nmap';
 import { createSimpleScan } from '../models/simplescan';
-import { IDevice, ISimpleScan } from '../helpers/scanDTypes'
-export async function scan (ctx, next) {
+import { IDevice } from '../types/device'
+import { ISimpleScan } from '../types/scan'
+
+export async function scan (ctx) {
   try {
     const data: IDevice[] = await scanAll()
-    ctx.body = data;
-    ctx.status = 200;
     const result: ISimpleScan = {
-      target: 'None',
+      target: 'default',
       devices: data,
       timestamp: Date.now(),
     }
 
     const simpleScan: ISimpleScan = await createSimpleScan(result);
+    if (!simpleScan) throw new Error('controllers - nmap - scan, while writing to DB');
 
+    ctx.body = data;
+    ctx.status = 200;
   } catch (err) {
-    console.log(err);
+    console.error(err);
     ctx.body = err;
     ctx.status=500;
   }

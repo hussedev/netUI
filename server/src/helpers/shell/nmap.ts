@@ -1,18 +1,12 @@
-// const { promisify } = require('util');
-// const { exec, execFile } = require('child_process');
-import { exec, execFile } from 'child_process';
+import { execFile } from 'child_process';
 import { promisify } from 'util';
-import { Device, NmapArgs } from './types/device';
+import { exec, execSudo } from './shell';
+import { Device } from '../../types/device';
+import { NmapArgs } from '../../types/scan';
 
 const execP = promisify(execFile);
-const OS = process.platform;
 
 function parseSimpleScan(data: string[]): Device[] {
-  /**
-   * ip4 -> xxx.xxx.xxx.xxx
-   * latency -> 'x+.x+s latency'
-   * hostname ->
-   */
   const regex = {
     ip4: /((25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])\.){3}(25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])/g,
     hostname: /for\s(([\w]|[\w][\w\-]*[\w])\.)*([\w]|[\w][\w\-]*[\w])\s\(/g,
@@ -56,16 +50,9 @@ function parseSimpleScan(data: string[]): Device[] {
 function nmap (args: NmapArgs): Promise<Device[]> {
   return new Promise(
     (resolve, reject) => {
-
-
       try {
-        //execP('sudo',['nmap', opts.args, opts.range])
-        execP('nmap', [args.opts, args.range])
-          .then((data) => {
-            console.log(data.stdout);
-            if(data && data.stdout) resolve(parseSimpleScan(data.stdout.split('\n')));
-            resolve([]);
-        });
+        exec('nmap -sn 192.168.1.0/24')
+          .then((data) => resolve(parseSimpleScan(data)));
       } catch(err) {
         reject(err);
       }
@@ -76,12 +63,8 @@ function nmapSudo (args: NmapArgs): Promise<Device[]> {
   return new Promise(
     (resolve, reject) => {
       try {
-        //execP('sudo',['nmap', opts.args, opts.range])
-        execP('sudo', ['nmap',args.opts, args.range])
-          .then((data) => {
-            if(data && data.stdout) resolve(parseSimpleScan(data.stdout.split('\n')));
-            resolve([]);
-        });
+        execSudo('nmap -sn 192.168.1.0/24')
+          .then((data) => resolve(parseSimpleScan(data)));
       } catch(err) {
         reject(err);
       }
