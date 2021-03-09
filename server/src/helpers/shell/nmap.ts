@@ -1,9 +1,10 @@
-import { exec, execFile } from 'child_process';
+import { execFile } from 'child_process';
 import { promisify } from 'util';
-import { Device, NmapArgs } from './types/device';
+import { exec, execSudo } from './shell';
+import { Device } from '../../types/device';
+import { NmapArgs } from '../../types/scan';
 
 const execP = promisify(execFile);
-const OS = process.platform;
 
 function parseSimpleScan(data: string[]): Device[] {
   const regex = {
@@ -49,15 +50,9 @@ function parseSimpleScan(data: string[]): Device[] {
 function nmap (args: NmapArgs): Promise<Device[]> {
   return new Promise(
     (resolve, reject) => {
-
-
       try {
-        execP('nmap', [args.opts, args.range])
-          .then((data) => {
-            console.log(data.stdout);
-            if(data && data.stdout) resolve(parseSimpleScan(data.stdout.split('\n')));
-            resolve([]);
-        });
+        exec('nmap -sn 192.168.1.0/24')
+          .then((data) => resolve(parseSimpleScan(data)));
       } catch(err) {
         reject(err);
       }
@@ -68,11 +63,8 @@ function nmapSudo (args: NmapArgs): Promise<Device[]> {
   return new Promise(
     (resolve, reject) => {
       try {
-        execP('sudo', ['nmap',args.opts, args.range])
-          .then((data) => {
-            if(data && data.stdout) resolve(parseSimpleScan(data.stdout.split('\n')));
-            resolve([]);
-        });
+        execSudo('nmap -sn 192.168.1.0/24')
+          .then((data) => resolve(parseSimpleScan(data)));
       } catch(err) {
         reject(err);
       }

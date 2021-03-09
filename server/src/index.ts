@@ -1,9 +1,11 @@
 import * as Koa from 'koa';
 import * as morgan from 'koa-morgan';
 import * as cors from '@koa/cors';
-
+import * as dotenv from 'dotenv'
 import router from './router';
 import { serverConf } from './config';
+
+dotenv.config();
 
 const server: any = new Koa();
 

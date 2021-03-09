@@ -1,5 +1,6 @@
 import { Document, Schema, Model, Types, Query } from 'mongoose';
-import { Device, ISimpleScan } from '../helpers/scanDTypes';
+import { ISimpleScan } from '../types/scan';
+import { Device } from '../types/device';
 import * as mongoose from './index';
 
 export interface DISimpleScan extends Document {
