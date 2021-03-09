@@ -9,8 +9,6 @@ export interface DISimpleScan extends Document {
   devices?: Device[]
 }
 
-
-
 const SimpleScanSchema: Schema = new Schema({
   target: { type: String, required: true },
   gateway: { type: String, required: false },
@@ -27,13 +25,8 @@ const SimpleScanSchema: Schema = new Schema({
   timestamp: { type: Number, required: false },
 });
 
-
-
 const SimpleScan: Model<DISimpleScan> = mongoose.model('SimpleScan', SimpleScanSchema);
 
 export async function createSimpleScan (post: ISimpleScan): Promise<ISimpleScan> {
   return await SimpleScan.create({ ...post });
-  // const res: ISimpleScan = await SimpleScan.create({ ...post });
-  // if (res) return true;
-  // return false;
 }

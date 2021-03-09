@@ -15,19 +15,15 @@ export interface Device {
   brand?: string
 }
 
-// dynamic object definition
 export interface DeviceGroup {
   [name: string]: Device[];
 }
 
-/**
- * mode: local/openvpn/ssh
- */
 export interface Watched {
   [name: string]: {
     gateway?: {
       ip: string,
-      mode: string
+      mode?: 'local'| 'openvpn' | 'ssh'
     },
     targets: string[]
   }
