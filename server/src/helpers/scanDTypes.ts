@@ -3,8 +3,14 @@ export interface NmapArgs {
   range?: string
 }
 
-export interface Device {
+export interface ISimpleScan {
+  target: string,
+  gateway?: string,
+  timestamp?: number,
+  devices?: Device[]
+}
 
+export interface Device {
   ip4: string,
   mac?: string,
   hostname?: string,
@@ -13,6 +19,27 @@ export interface Device {
   type?: string,
   img?: string,
   brand?: string
+  statusLog?: {
+      status: string,
+      time: number,
+      duration?: number
+  }[],
+}
+
+export interface IDevice {
+  ip4: string,
+  mac?: string,
+  hostname?: string,
+  latency?: number,
+  status?: string,
+  type?: string,
+  img?: string,
+  brand?: string
+  statusLog?: {
+      status: string,
+      time: number,
+      duration?: number
+  }[],
 }
 
 // dynamic object definition
