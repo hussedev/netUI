@@ -12,8 +12,8 @@ export async function scan(ctx) {
       timestamp: Date.now(),
     }
 
-    const simpleScan: ISimpleScan = await createSimpleScan(result);
-    if (!simpleScan) throw new Error('controllers - nmap - scan, while writing to DB');
+    // const simpleScan: ISimpleScan = await createSimpleScan(result);
+    // if (!simpleScan) throw new Error('controllers - nmap - scan, while writing to DB');
 
     ctx.body = data;
     ctx.status = 200;
@@ -33,8 +33,8 @@ export async function scanTarget(ctx) {
       timestamp: Date.now(),
     }
 
-    const simpleScan: ISimpleScan = await createSimpleScan(result);
-    if (!simpleScan) throw new Error('controllers - nmap - scan, while writing to DB');
+    // const simpleScan: ISimpleScan = await createSimpleScan(result);
+    // if (!simpleScan) throw new Error('controllers - nmap - scan, while writing to DB');
 
     ctx.body = data;
     ctx.status = 200;

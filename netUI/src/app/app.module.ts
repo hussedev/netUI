@@ -17,8 +17,7 @@ import { DeviceListComponent } from './components/device-list/device-list.compon
 import { DeviceSingleComponent } from './components/device-single/device-single.component';
 import { ScanResultComponent } from './components/scan-result/scan-result.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
-
-
+import { SpinnersAngularModule } from 'spinners-angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +37,9 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     AngularMaterialModule,
     FlexLayoutModule,
     HttpClientModule,
-    NgTerminalModule
+    NgTerminalModule,
+    SpinnersAngularModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],

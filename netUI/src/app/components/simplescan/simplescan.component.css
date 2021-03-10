@@ -6,8 +6,11 @@
 
 .form {
   border: 2px dotted #ddd;
-  margin: 50px;
-  height: 40vh;
+  position: relative;
+  top: 325px;
+  left: 80px;
+  height: 150px;
+  width: 300px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -17,6 +20,18 @@
 
 .form input {
   border: 2px dotted #ddd;
+  width: 250px;
+  font-size: 20px;
+  text-align: center;
+}
+.form label {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+a:hover,
+a:active {
+  color: rgb(255, 255, 255);
 }
 
 .form a {
@@ -34,6 +49,21 @@
   border-top-width: 2px;
   border-top-style: dashed;
   border-top-color: #ddd;
+}
+
+.section-title {
+  border-bottom: 2px dashed #ddd;
+  padding-top: 20px;
+  height: 5vh;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: auto;
+}
+
+.form-container {
+  height: 100vh;
+  width: 25%;
 }
 
 .side-bar {
@@ -58,4 +88,10 @@
 .btn {
   border: dotted 1px #ddd;
   font-size: medium;
+}
+
+sa-spinner-dotted {
+  position: absolute;
+  top: 300px;
+  left: 1150px;
 }

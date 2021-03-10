@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiClientService } from '../../services/api-client.service';
-import { Device, DeviceGroup, Watched} from '../../types/device';
+import { Device, DeviceGroup, Watched } from '../../types/device';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,20 +8,21 @@ import { Device, DeviceGroup, Watched} from '../../types/device';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  name: string = 'Group 1';
   watched: Watched = {};
-  devices: DeviceGroup = {};
+  devices: Device[] = [];
+  spinner: boolean = false;
 
-  constructor(private client: ApiClientService) { }
+
+  constructor(private client: ApiClientService) {
+  }
 
   ngOnInit() {
-    this.devices["default"] = [];
-    this.devices["group1"] = [];
-    this.client.getAll()
-      .subscribe(devices =>
-        this.devices["default"] = devices);
+    this.spinner = true;
     this.client.getWatched('group1')
-      .subscribe(devices =>
-        this.devices["group1"] = devices);
+      .subscribe(devices => {
+        this.spinner = false;
+        this.devices = devices
+      });
   }
 }

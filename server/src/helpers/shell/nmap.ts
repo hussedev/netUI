@@ -76,6 +76,7 @@ export async function scanAll(): Promise<Device[]> {
 }
 
 export async function scanAllTarget(target: string): Promise<Device[]> {
+
   return await nmapSudo({ opts: '-sn', range: target });
 }
 

@@ -24,7 +24,9 @@ export class DeviceSingleComponent implements OnInit {
 
 
   ngOnInit() {
-    if (this.device) this.info = this.renderCard(this.device);
+    if (this.device) {
+      this.info = this.renderCard(this.device);
+    }
   }
 
   watch(): boolean {
@@ -63,7 +65,7 @@ export class DeviceSingleComponent implements OnInit {
           res.img = 'assets/svg/pc-unknown.svg';
           break;
         default:
-          res.img = 'assets/svg/pc-default.svg';
+          res.img = 'assets/svg/pc-on.svg';
       }
     }
     return res;

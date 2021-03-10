@@ -1,18 +1,30 @@
 <div class="simple-scan-container">
   <div class="side-bar">
-    <div class="form">
-      <label>
-        Target:
-        <input type="text" [formControl]="targetForm" />
-      </label>
-      <a mat-button mat-raised-button class="btn btn-raised" (click)="scan()">
-        Scan
-      </a>
+    <div class="section-title">Insert target...</div>
+    <div class="form-container">
+      <div class="form">
+        <label>
+          Target:
+          <input type="text" [formControl]="targetForm" />
+        </label>
+        <a mat-button mat-raised-button class="btn btn-raised" (click)="scan()">
+          Scan
+        </a>
+      </div>
     </div>
   </div>
 
   <div class="content">
-    <div class="list">
+    <sa-spinner-dotted
+      [size]="200"
+      [thickness]="100"
+      [speed]="50"
+      color="#ddd"
+      *ngIf="spinner && result.length < 1"
+    ></sa-spinner-dotted>
+    <div class="section-title">Scan</div>
+
+    <div class="list" *ngIf="result.length > 0">
       <app-scan-result [name]="target" [devices]="result"></app-scan-result>
     </div>
   </div>

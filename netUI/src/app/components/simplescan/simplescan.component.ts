@@ -14,9 +14,10 @@ interface Scan {
   styleUrls: ['./simplescan.component.css']
 })
 export class SimplescanComponent implements OnInit {
-  targetForm = new FormControl('192.168.1.0/24');
+  targetForm = new FormControl('');
   mode = new FormControl('over');
-  target: string = ''
+  target: string = '';
+  spinner: boolean = false;
   result: Device[] = [];
   roles: string[] = ['sudo', 'normal'];
   scanTypes: Scan[] = [
@@ -25,9 +26,6 @@ export class SimplescanComponent implements OnInit {
     { value: '-d-', viewValue: 'allPorts' },
   ];
   constructor(private client: ApiClientService) {
-    this.client.getWatched('group1')
-      .subscribe(devices =>
-        this.result = devices);
   }
 
   ngOnInit(): void {
@@ -36,9 +34,19 @@ export class SimplescanComponent implements OnInit {
   scan() {
     this.target = this.targetForm.value;
     this.updateTarget('');
-    this.client.getTarget({ ip: this.target })
-      .subscribe(devices =>
-        this.result = devices);
+    this.result = [];
+    this.spinner = true;
+    this.client.getAll()
+      .subscribe(devices => {
+        this.spinner = false;
+
+        devices
+          .forEach(device => {
+            this.result.push(device);
+          }
+          );
+      }
+      );
   }
 
   updateTarget(target: string) {
