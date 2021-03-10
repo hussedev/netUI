@@ -1,0 +1,21 @@
+* {
+  font-family: "FreeMono";
+  color: #ddd;
+  background-color: #333;
+}
+
+.group-name {
+  text-decoration: #ddd dashed underline 1px;
+  font-weight: 900;
+  font-size: x-large;
+  padding: 10px;
+}
+
+.mat-grid-tile {
+  border: dotted 1px #ddd;
+  border-radius: 5px;
+}
+
+.result-list-container {
+  padding: 0px 20px;
+}

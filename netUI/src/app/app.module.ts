@@ -15,6 +15,8 @@ import { SimplescanComponent } from './components/simplescan/simplescan.componen
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DeviceListComponent } from './components/device-list/device-list.component';
 import { DeviceSingleComponent } from './components/device-single/device-single.component';
+import { ScanResultComponent } from './components/scan-result/scan-result.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 
 @NgModule({
@@ -25,6 +27,8 @@ import { DeviceSingleComponent } from './components/device-single/device-single.
     DeviceSingleComponent,
     SimplescanComponent,
     NavbarComponent,
+    ScanResultComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,

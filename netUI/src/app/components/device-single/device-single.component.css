@@ -1,8 +1,13 @@
+* {
+  font-family: "FreeMono";
+  color: #ddd;
+  background-color: #333;
+}
+
 .device-container {
-  color: white;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  font-size: large;
 }
 
 .info-device {
@@ -11,12 +16,22 @@
   text-align: center;
 }
 
-.example-card {
-  max-width: 400px;
+.btn {
+  font-size: large;
+  position: absolute;
+  width: 2rem;
+  top: 20px;
+  left: 20px;
 }
 
-.example-header-image {
-  /* ?: How to link a variable to it */
-  background-image: src("assets/svg/pc-on-unknown.svg");
-  background-size: cover;
+.device-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.device-bottom {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
 }

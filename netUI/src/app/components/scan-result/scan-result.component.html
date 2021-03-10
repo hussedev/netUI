@@ -1,0 +1,11 @@
+<div class="result-list-container">
+  <div class="group-name">
+    <p>{{ name }}</p>
+  </div>
+  <mat-grid-list cols="4" rowHeight="300px" gutterSize="10px">
+    <mat-grid-tile *ngFor="let device of devices">
+      <app-device-single [gridColumns]="gridColumns" [device]="device">
+      </app-device-single>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

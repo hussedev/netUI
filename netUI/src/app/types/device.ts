@@ -1,5 +1,4 @@
 export interface Device {
-
   ip4: string,
   mac?: string,
   hostname?: string,
@@ -8,22 +7,18 @@ export interface Device {
   type?: string,
   img?: string,
   brand?: string,
-  watched?: boolean
-  // isOn: () => boolean;
+  watched?: boolean,
+  statusLog?: {
+    status: string,
+    time: number,
+    duration?: number
+  }[],
 }
-// function isOn (device: Device): boolean {
-//   return status === 'up';
-// }
 
-
-// dynamic object definition
 export interface DeviceGroup {
   [name: string]: Device[];
 }
 
-/**
- * mode: local/openvpn/ssh
- */
 export interface Watched {
   [name: string]: {
     gateway?: {

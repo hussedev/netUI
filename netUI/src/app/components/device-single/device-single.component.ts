@@ -2,19 +2,17 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Device } from '../../types/device';
 
 
-interface Card {
-  img?: string,
-  description?: string,
-  title?: string,
-  subtitles?: string[],
+interface Info {
+  [name: string]: string;
 }
+
 
 @Component({
   selector: 'app-device-single',
   templateUrl: './device-single.component.html',
   styleUrls: ['./device-single.component.css']
 })
-export class DeviceSingleComponent implements OnInit{
+export class DeviceSingleComponent implements OnInit {
 
   @Input()
   device?: Device;
@@ -22,34 +20,50 @@ export class DeviceSingleComponent implements OnInit{
   @Input()
   gridColumns?: number;
 
-  card: Card = {};
+  info: Info = {};
+
 
   ngOnInit() {
-    if(this.device) this.card = this.renderCard(this.device);
+    if (this.device) this.info = this.renderCard(this.device);
   }
 
-  renderCard(device: Device): Card {
-    let res: Card = {};
-    if (device) {
-      res.title = device.hostname || device.ip4 || "Unknown";
-      device.hostname
-        ? res.subtitles = [device.ip4 || "Unknown IP Address"]
-        : res.subtitles = [];
-      if(device.mac) res.subtitles.push(device.mac);
-      if(device.brand) res.subtitles.push(device.brand);
+  watch(): boolean {
+    if (!this.device) return false;
+    if (!this.device.watched) {
+      this.device.watched = true;
+      return true;
+    }
+    return false;
+  }
 
+  unwatch(): boolean {
+    if (!this.device) return false;
+    if (this.device.watched) {
+      this.device.watched = false;
+      return true;
+    }
+    return false;
+  }
+
+  renderCard(device: Device): Info {
+    let res: Info = {};
+    if (device) {
+      res.hostname = device.hostname || "Unknown";
+      res.ip = device.ip4 || "Unknown";
+      res.mac = device.mac || "Unknown";
+      res.brand = device.brand || "Unknown";
       switch (device.status) {
         case 'on':
-          res.img = 'assets/svg/pc-green.svg';
+          res.img = 'assets/svg/pc-on.svg';
           break;
         case 'off':
-          res.img = 'assets/svg/pc-red.svg';
+          res.img = 'assets/svg/pc-off.svg';
           break;
         case 'unknown':
           res.img = 'assets/svg/pc-unknown.svg';
           break;
         default:
-          res.img = 'assets/svg/pc-blue.svg';
+          res.img = 'assets/svg/pc-default.svg';
       }
     }
     return res;

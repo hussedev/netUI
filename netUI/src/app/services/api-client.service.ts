@@ -8,25 +8,34 @@ import { apiConf } from '../config';
 
 import mockedData from '../mocks';
 
+interface PostIP { [name: string]: string };
+
 @Injectable({
   providedIn: 'root'
 })
-
 export class ApiClientService {
   private apiURL = `${apiConf.url}:${apiConf.port}`;
 
-  constructor(public http: HttpClient) {}
+  constructor(public http: HttpClient) { }
 
   getAll(): Observable<Device[]> {
     return this.http
       .get<Device[]>(`${this.apiURL}/getAll`)
-      .pipe(map(device => {
-        console.log(device);
-        return device;
-      }));
+      .pipe(map(device => device));
   }
 
-  //TODO
+  postTarget(target: PostIP, mode?: string): Observable<Device[]> {
+    return this.http
+      .post<Device[]>(`${this.apiURL}/getAll`, target)
+      .pipe(map(device => device));
+  }
+
+  getTarget(target: PostIP, mode?: string): Observable<Device[]> {
+    return this.http
+      .get<Device[]>(`${this.apiURL}/getAll/${target}`)
+      .pipe(map(device => device));
+  }
+
   getWatched(group: string): Observable<Device[]> {
     return of<Device[]>(mockedData.b);
   }

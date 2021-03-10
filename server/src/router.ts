@@ -10,5 +10,6 @@ router.get('/', async (ctx, next) => {
 });
 
 router.get('/getAll', nmap.scan);
+router.post('/getAll/', nmap.scanTarget);
 
 export default router;

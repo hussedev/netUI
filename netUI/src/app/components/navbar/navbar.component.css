@@ -1,0 +1,17 @@
+mat-toolbar {
+  background-color: #333;
+}
+
+.btn-raised {
+  background-color: rgba(0, 0, 0, 0);
+  border: dotted 1px #ddd;
+}
+
+.btn {
+  font-family: "FreeMono";
+  font-size: large;
+}
+
+.app-header {
+  box-shadow: none;
+}

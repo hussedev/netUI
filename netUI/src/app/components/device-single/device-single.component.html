@@ -1,35 +1,26 @@
 <div class="device-container">
-  <mat-card tabindex="0" class="box">
-    <mat-card-title *ngIf="false"></mat-card-title>
-    <mat-card-title-group>
-      <mat-card-title>{{ card.title }}</mat-card-title>
-      <mat-card-subtitle>
-        <div *ngFor="let subtitle of card.subtitles">
-          {{ subtitle }}
-        </div>
-      </mat-card-subtitle>
-      <img
-        *ngIf="gridColumns && gridColumns === 1"
-        mat-card-sm-image
-        alt="device image"
-        src="{{ card.img }}"
-      />
-    </mat-card-title-group>
-    <img
-      mat-card-image
-      *ngIf="gridColumns && gridColumns > 1"
-      alt="device image"
-      src="{{ card.img }}"
-    />
-    <mat-card-content *ngIf="card.description">
-      <p>
-        {{ card.description }}
-      </p>
-    </mat-card-content>
-    <mat-card-actions align="end">
-      <button mat-button *ngIf="device && !device.watched">WATCH</button>
-      <button mat-button *ngIf="device && device.watched">UNWATCH</button>
-    </mat-card-actions>
-    <mat-card-footer *ngIf="false"></mat-card-footer>
-  </mat-card>
+  <div class="device-top img">
+    <img src="{{ info.img }}" alt="device image" />
+  </div>
+
+  <div class="device-bottom info">
+    <p class="hostname" *ngIf="info.hostname">
+      {{ info.hostname }}
+    </p>
+    <p class="ip" *ngIf="info.ip">
+      {{ info.ip }}
+    </p>
+  </div>
 </div>
+<img
+  src="assets/svg/watchBtn.svg"
+  class="btn btn-raised"
+  *ngIf="device && !device.watched"
+  (click)="watch()"
+/>
+<img
+  src="assets/svg/watchXBtn.svg"
+  class="btn btn-raised"
+  *ngIf="device && device.watched"
+  (click)="unwatch()"
+/>
